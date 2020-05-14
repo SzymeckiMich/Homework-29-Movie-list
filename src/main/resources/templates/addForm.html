@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj zadanie</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="navbar.html :: navbar"></header>
+
+<div class="container">
+
+
+    <form action="/add" method="post" th:object="${movie}">
+
+        Tytuł: <input type="text" class="form-control" placeholder="Wpisz tytuł filmu"
+                                th:field="*{title}">
+        Opis filmu: <textarea class="form-control" placeholder="Wpisz opis filmu"
+                              th:field="*{description}"></textarea>
+        Data premiery: <input class="form-control" type="date" th:field="*{premiereDate}"></br>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Gatunek filmu</label>
+            <div class="col-sm-10">
+                <select class="form-control" th:field="*{category}">
+                    <option disabled selected value="">Wybierz..</option>
+                    <option value="SCIFI">SCIFI</option>
+                    <option value="HORROR">HORROR</option>
+                    <option value="COMEDY">COMEDY</option>
+                    <option value="ROMANTIC">ROMANTIC</option>
+                    <option value="FEATURE">FEATURE</option>
+                    <option value="CARTOON">CARTOON</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>

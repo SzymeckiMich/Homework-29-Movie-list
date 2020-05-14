@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Główna</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="navbar.html :: navbar"></header>
+
+<div class="row">
+    Gatunki:
+    <a class="btn btn-primary" href="/">Wszystkie</a>
+    <a class="btn btn-primary" href="/movieList?category=SCIFI">SCIFI</a>
+    <a class="btn btn-primary" href="/movieList?category=HORROR">HORROR</a>
+    <a class="btn btn-primary" href="/movieList?category=COMEDY">COMEDY</a>
+    <a class="btn btn-primary" href="/movieList?category=ROMANTIC">ROMANTIC"</a>
+    <a class="btn btn-primary" href="/movieList?category=FEATURE">FEATURE"</a>
+    <a class="btn btn-primary" href="/movieList?category=CARTOON">CARTOON</a>
+</div>
+
+<div class="mx-auto" style="width: 600px">
+    <a href="/add" class="btn btn-primary btn-lg btn-block">Dodaj film</a>
+</div>
+
+
+
+</body>
+</html>
